@@ -1,0 +1,25 @@
+# Enable mod_rewrite
+RewriteEngine On
+
+# Redirect to HTTPS (optional but recommended)
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Enable Gzip Compression
+<IfModule mod_deflate.c>
+  <FilesMatch "\.(js|css)$">
+    SetOutputFilter DEFLATE
+  </FilesMatch>
+</IfModule>
+
+# Set cache control for various file types
+<FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf|woff|woff2|ttf)$">
+  Header set Cache-Control "max-age=31536000, public"
+</FilesMatch>
+
+# Content Security Policy (example, customize as needed)
+# Header set Content-Security-Policy "default-src 'self'"
+
+# Rewrite rules for React Router
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.html [QSA,L]

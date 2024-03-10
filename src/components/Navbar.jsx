@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <div className='flex justify-between items-center sm:gap-[20px] gap-[10px] py-2'>
-    <Link to='/'><img src={isDarkMode ? whiteLogo : logo} alt="Logo" className='lg:w-[140px] md:w-[120px] sm:w-[90px] w-[70px]'/></Link>
+    <Link to='/'><img src={isDarkMode ? whiteLogo : logo} alt="Logo" className='lg:w-[140px] md:w-[120px] w-[100px]'/></Link>
     <City />
     <ThemeToggle />
     </div>
