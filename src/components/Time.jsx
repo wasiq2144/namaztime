@@ -18,9 +18,9 @@ const Time = () => {
   const formattedDateTime = currentDateTime.toLocaleString(undefined, options);
 
   return (
-    <div>
-      <h4 className='sm:text-lg text-sm font-bold dark:text-light-secondary text-dark-secondary'>{formattedDateTime}</h4>
-    </div>
+    <> 
+      <h4 className='sm:text-lg text-sm font-bold dark:text-light-secondary text-dark-secondary mt-3'>{formattedDateTime}</h4>
+    </>
   );
 };
 
